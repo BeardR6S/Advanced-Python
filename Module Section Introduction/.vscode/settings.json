@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./Create Custom Module and Import it in/libs"
+    ]
+}
