@@ -1,45 +1,35 @@
 import fnmatch
+from fnmatch import fnmatchcase
 import os
 
 def list_files():
     for file in os.listdir('.'):
-        if fnmatch.fnmatch(file, "*.txt"):
-            print("Text files:, ", file)
+        if fnmatch.fnmatch(file, '*.txt'):
+            print('Text files:', file)
 
-# import fnmatch
-# from fnmatch import fnmatchcase
-# import os
+        if fnmatch.fnmatch(file, '*.rb'):
+            print('Ruby files:', file)
 
-# def list_files():
-#     for file in os.listdir('.'):
-#         if fnmatch.fnmatch(file, '*.txt'):
-#             print('Text files:', file)
-
-#         if fnmatch.fnmatch(file, '*.rb'):
-#             print('Ruby files:', file)
-
-#         if fnmatch.fnmatch(file, '*.yml'):
-#             print('Yaml files:', file)
-
-#         if fnmatch.fnmatch(file, '*.py'):
-#             print('Python files:', file)
+        if fnmatch.fnmatch(file, '*.yml'):
+            print("Yaml files: ", file)
+            
+        if fnmatch.fnmatch(file, "*.py"):
+            print("Python files: ", file)
 
 
-list_files()
+# list_files()
 
-def print():
-    print('')
+players = [
+    "Jose Altuve 2B",
+    "Carlos Correa SS",
+    "Alex Bregman 3B",
+    "Scooter Gennet 2B"
+]
 
-# players = [
-#     "Jose Altuve 2B",
-#     "Carlos Correa SS",
-#     "Alex Bregman 3B",
-#     "Scooter Gennett 2B"
-# ]
+second_base_players = [player for player in players if fnmatchcase(player, "* 2B")]
 
-# second_base_players = [player for player in players if fnmatchcase(player, "* 2B")]
+print("Second Base Players: ", second_base_players)
 
-# print(second_base_players)
 
 """
     def print_func():
